@@ -53,8 +53,8 @@ inquirer
 ])
 // function to write README file
 .then((data)=>{
-const goodReadMe = `${data.title.toLowerCase().split('').join('')}.md`;
-fs.writeFile(goodReadMe, newMD(data), (err)=>
+const README = `${data.title.split('').join('')}.md`;
+fs.writeFile(README, newMD(data), (err)=>
 err? console.log(err) : console.log('Congratulations!')
 );
 });
