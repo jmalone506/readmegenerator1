@@ -71,7 +71,24 @@ function newMD(data){
     [Test](#Test)
     [License](#License)
     
-    ### Project De`
-}
+    ### Project
+    ${data.Description}
+
+    ### Installation
+    ${data.installation}
+
+    ### Usage
+    ${data.usage}
+
+    ### Contribution
+    ${data.contributing}
+
+    ### Test
+    ${data.Test}
+
+    ### License
+    ${data.license}
+    `
+};
 
 
