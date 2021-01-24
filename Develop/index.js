@@ -36,7 +36,7 @@ inquirer
         message:'what licenses are being used',
         choices:[
             "ISC",
-            "Inquirer",
+            "MIT",
             "BSL",
         ],
     },
@@ -50,45 +50,50 @@ inquirer
         name:'email',
         message:'What is your Email?',
     },
-])
+]);
 // function to write README file
-.then((data)=>{
-const README = `${data.title.split('').join('')}.md`;
-fs.writeFile(README, newMD(data), (err)=>
-err? console.log(err) : console.log('Congratulations!')
-);
-});
-
-function newMD(data){
-    return `
-    #${data.title}
+function writeToFile(fileName,data){
+    fs.writeFile("./readme/" +fileName, data, function(err){
+        if (err) {
+            return console.log(err)
+        }
+        console.log("Suceed: " + fileName);
+    })
+    }
     
-    ##Table Of Content
-    [Project](#Project)
-    [Installation](#Installation)
-    [Usage](#Usage)
-    [Contribution](#Contribution)
-    [Test](#Test)
-    [License](#License)
-    
-    ### Project
-    ${data.Description}
-
-    ### Installation
-    ${data.installation}
-
-    ### Usage
-    ${data.usage}
-
-    ### Contribution
-    ${data.contributing}
-
-    ### Test
-    ${data.Test}
-
-    ### License
-    ${data.license}
-    `
+function init(){
+    inquirer.prompt(questions)
+    .then(function(data){
+        writeToFile("README.md", generatorMarkdown(data));
+    })
 };
+    
+    // ##Table Of Content
+    // [Project](#Project)
+    // [Installation](#Installation)
+    // [Usage](#Usage)
+    // [Contribution](#Contribution)
+    // [Test](#Test)
+    // [License](#License)
+    
+    // ### Project
+    // ${data.Description}
+
+    // ### Installation
+    // ${data.installation}
+
+    // ### Usage
+    // ${data.usage}
+
+    // ### Contribution
+    // ${data.contributing}
+
+    // ### Test
+    // ${data.Test}
+
+    // ### License
+    // ${data.license}
+    // `
+
 
 
