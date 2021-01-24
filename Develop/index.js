@@ -14,25 +14,30 @@ inquirer
     {
         type:'input',
         name:'installation',
-        message:'',
+        message:'Instructions for intallation',
     }, {
         type:'input',
         name:'usage',
-        message:'',
+        message:'Usage Information',
     }, {
         type:'input',
         name:'contributing',
-        message:'',
+        message:'contribution',
     },
     {
         type:'input',
         name:'Test',
-        message:'',
+        message:'test instruction',
     },
     {
         type:'list',
         name:'license',
         message:'',
+        choices:[
+            "",
+            "",
+            "",
+        ],
     },
     {
         type:'input',
