@@ -1,7 +1,12 @@
-// array of questions for user
-const questions = [
-
-];
+// questions for user
+const inquirer = require('inquirer')
+inquirer
+    .prompt([{
+        type: 'input',
+        name: 'Project',
+        message: 'Project Title',
+    },
+    {},
 
 // function to write README file
 function writeToFile(fileName, data) {
