@@ -1,5 +1,6 @@
 // questions for user
 const inquirer = require('inquirer')
+const fs = require('fs')
 inquirer
     .prompt([{
         type: 'input',
@@ -32,11 +33,11 @@ inquirer
     {
         type:'list',
         name:'license',
-        message:'',
+        message:'what licenses are being used',
         choices:[
-            "",
-            "",
-            "",
+            "ISC",
+            "Inquirer",
+            "BSL",
         ],
     },
     {
@@ -51,8 +52,11 @@ inquirer
     },
 ])
 // function to write README file
-function writeToFile(fileName, data) {
-}
+.then((data)=>{
+const goodReadMe = `${data.title.toLowerCase().split('').join('')}.md`;
+fs
+})
+
 
 // function to initialize program
 function init() {
