@@ -54,14 +54,24 @@ inquirer
 // function to write README file
 .then((data)=>{
 const goodReadMe = `${data.title.toLowerCase().split('').join('')}.md`;
-fs
-})
+fs.writeFile(goodReadMe, newMD(data), (err)=>
+err? console.log(err) : console.log('Congratulations!')
+);
+});
 
-
-// function to initialize program
-function init() {
-
+function newMD(data){
+    return `
+    #${data.title}
+    
+    ##Table Of Content
+    [Project](#Project)
+    [Installation](#Installation)
+    [Usage](#Usage)
+    [Contribution](#Contribution)
+    [Test](#Test)
+    [License](#License)
+    
+    ### Project De`
 }
 
-// function call to initialize program
-init();
+
